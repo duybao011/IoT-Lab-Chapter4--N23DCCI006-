@@ -63,4 +63,3 @@ if __name__ == "__main__":
     print(f"  Pot value: {pot.value}")
     pot.set_value(0.8)
     print(f"  Pot after set: {pot.value}")
-    
