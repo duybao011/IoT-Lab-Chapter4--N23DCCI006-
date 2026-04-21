@@ -1,5 +1,8 @@
 # IoT Lab — Chapter 4: Raspberry Pi with Python
 
+![GitHub Actions](https://github.com/duybao011/IoT-Lab-Chapter4--N23DCCI006-/actions/workflows/ci.yml/badge.svg)
+![GitLab CI](https://gitlab.com/duybao011/IoT-Lab-Chapter4-N23DCCI006/badges/main/pipeline.svg)
+
 **Họ tên:** Đỗ Trần Duy Bảo
 **MSSV:** N23DCCI006 
 **Lớp:** D23CQCI01-N
