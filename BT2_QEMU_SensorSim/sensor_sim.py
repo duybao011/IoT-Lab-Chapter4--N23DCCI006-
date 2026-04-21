@@ -1,5 +1,6 @@
 import random
 
+
 # Bước 1: Class SimLED
 class SimLED:
     def __init__(self, pin, name="LED"):
@@ -18,6 +19,7 @@ class SimLED:
     def blink(self, on_time=1, off_time=1):
         print(f"[{self.name}] BLINK on={on_time}s off={off_time}s")
 
+
 # Bước 2: Class SimUltrasonic với nhiễu Gaussian
 class SimUltrasonic:
     def __init__(self, echo, trigger, base_distance=50.0):
@@ -27,11 +29,12 @@ class SimUltrasonic:
 
     @property
     def distance(self):
-        raw = random.gauss(self.base_distance, 2.0)  # Độ lệch chuẩn σ = 2.0 cm
-        return max(2, min(400, raw))  # Giới hạn chuẩn của HC-SR04
+        raw = random.gauss(self.base_distance, 2.0)
+        return max(2, min(400, raw))
 
     def set_base(self, new_val):
         self.base_distance = max(2, min(400, new_val))
+
 
 # Bước 3: Class SimPotentiometer (Biến trở)
 class SimPotentiometer:
@@ -45,6 +48,7 @@ class SimPotentiometer:
     def set_value(self, v):
         self._value = max(0.0, min(1.0, float(v)))
 
+
 # Bước 4: Test module
 if __name__ == "__main__":
     led = SimLED(17, "TestLED")
@@ -52,10 +56,11 @@ if __name__ == "__main__":
     led.off()
 
     us = SimUltrasonic(echo=24, trigger=23)
-    for i in range(5):
+    for _ in range(5):
         print(f"  Distance: {us.distance:.1f} cm")
 
     pot = SimPotentiometer()
     print(f"  Pot value: {pot.value}")
     pot.set_value(0.8)
     print(f"  Pot after set: {pot.value}")
+    
